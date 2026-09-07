@@ -1,12 +1,14 @@
 .scene-background {
 	position: fixed;
 	inset: 0;
-	z-index: -1;
+	background: #0a0a0a;
 }
 
 .page-content {
 	position: relative;
-	z-index: 1;
+	/* position: relative is load-bearing. it puts this in the same painting step
+    as .scene-background, so being second in the DOM is what stacks it on top.
+    Drop it and the fixed background covers the content. */
 	min-height: 100vh;
 	padding: 4rem;
 	color: white;
