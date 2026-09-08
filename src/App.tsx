@@ -1,10 +1,14 @@
 import "./App.css";
-import { CityScene } from "./features/city-grid/CityScene";
+import { Theme } from "./Theme";
+import { CityScene } from "./features/CityGrid/CityScene";
 
 function App() {
 	return (
 		<>
-			<div className="scene-background">
+			<div
+				className="scene-background"
+				style={{ background: Theme.background }}
+			>
 				<CityScene />
 			</div>
 			<main className="page-content"></main>
