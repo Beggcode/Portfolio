@@ -1,4 +1,5 @@
 import type { CityConfig } from "@/shared/group/Schemas";
+import { makeRandom } from "@/shared/single/Random";
 import type { Vec3 } from "@/shared/single/Vec3";
 
 export type BuildingSpec = {
@@ -7,11 +8,10 @@ export type BuildingSpec = {
 	height: number;
 };
 
-// Pure: same config + same random in, same city out.
-// `random` is injectable so a seeded generator can be dropped in later.
+// Pure: same config in, same city out. `random` is injectable for tests.
 export function createCity(
 	config: CityConfig,
-	random: () => number = Math.random,
+	random: () => number = makeRandom(config.seed),
 ): BuildingSpec[] {
 	const {
 		gridSize,

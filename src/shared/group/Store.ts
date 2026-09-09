@@ -1,10 +1,10 @@
-import { create } from "zustand";
 import { createCity, type BuildingSpec } from "@/features/CityGrid/CityFactory";
 import {
 	CityConfigSchema,
 	type CityConfig,
 	type CityConfigInput,
 } from "@/shared/group/Schemas";
+import { create } from "zustand";
 
 // Every zustand store lives here.
 // The city sits here rather than in CityGrid because the build-up animation and
@@ -14,7 +14,7 @@ type CityState = {
 	buildings: BuildingSpec[];
 	/** Re-tune and regenerate. Throws on an illegal knob. */
 	configure: (input: CityConfigInput) => void;
-	/** Same config, freshly rolled layout. */
+	/** New seed, new layout. */
 	regenerate: () => void;
 };
 
@@ -27,6 +27,12 @@ export const useCityStore = create<CityState>((set, get) => {
 			const next = CityConfigSchema.parse(input);
 			set({ config: next, buildings: createCity(next) });
 		},
-		regenerate: () => set({ buildings: createCity(get().config) }),
+		regenerate: () => {
+			const next = {
+				...get().config,
+				seed: Math.floor(Math.random() * 2 ** 31),
+			};
+			set({ config: next, buildings: createCity(next) });
+		},
 	};
 });

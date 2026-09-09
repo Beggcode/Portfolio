@@ -6,6 +6,8 @@ import { z } from "zod";
 // The ranges catch a mistyped value instead of silently building a weird city.
 export const CityConfigSchema = z
 	.object({
+		/** Fixed by default so the skyline is the same on every reload. */
+		seed: z.number().int().default(1),
 		gridSize: z.number().int().min(1).max(200).default(10),
 		/** World units between cell centres. */
 		spacing: z.number().positive().default(1.6),
