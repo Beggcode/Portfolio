@@ -1,10 +1,10 @@
 import { create } from "zustand";
-import { createCity, type BuildingSpec } from "./features/CityGrid/CityFactory";
+import { createCity, type BuildingSpec } from "@/features/CityGrid/CityFactory";
 import {
 	CityConfigSchema,
 	type CityConfig,
 	type CityConfigInput,
-} from "./Schemas";
+} from "@/shared/group/Schemas";
 
 // Every zustand store lives here.
 // The city sits here rather than in CityGrid because the build-up animation and

@@ -1,5 +1,5 @@
+import { Theme } from "@/shared/group/Theme";
 import "./App.css";
-import { Theme } from "./Theme";
 import { CityScene } from "./features/CityGrid/CityScene";
 
 function App() {

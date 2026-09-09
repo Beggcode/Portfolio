@@ -1,6 +1,5 @@
-import type { CityConfig } from "../../Schemas";
-
-export type Vec3 = [number, number, number];
+import type { CityConfig } from "@/shared/group/Schemas";
+import type { Vec3 } from "@/shared/single/Vec3";
 
 export type BuildingSpec = {
 	id: string;

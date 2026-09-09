@@ -1,7 +1,7 @@
+import { Building } from "@/features/CityGrid/Building";
+import { useCityStore } from "@/shared/group/Store";
+import { Theme } from "@/shared/group/Theme";
 import { Grid } from "@react-three/drei";
-import { useCityStore } from "../../Store";
-import { Theme } from "../../Theme";
-import { Building } from "./Building";
 
 // Rendering only — layout comes from the store.
 export function CityGrid() {

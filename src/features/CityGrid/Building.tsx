@@ -1,4 +1,4 @@
-import { Theme } from "../../Theme";
+import { Theme } from "@/shared/group/Theme";
 
 type BuildingProps = {
 	position: [number, number, number];

@@ -1,8 +1,7 @@
+import { Theme } from "@/shared/group/Theme";
+import type { Vec3 } from "@/shared/single/Vec3";
 import { Canvas } from "@react-three/fiber";
-import { Theme } from "../../Theme";
 import { CityGrid } from "./CityGrid";
-
-type Vec3 = [number, number, number];
 
 // Rooftop vantage — the camera sits partway up a mid-rise, not above the city.
 // Don't level it out or pull it back.
